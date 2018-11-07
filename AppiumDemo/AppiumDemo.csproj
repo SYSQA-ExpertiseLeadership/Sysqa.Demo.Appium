@@ -78,6 +78,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="src\readme.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
