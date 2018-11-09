@@ -89,7 +89,7 @@ Om meer informatie over een specifiek image te krijgen:
 ```cmd
 > emulatorcmd.exe /sku:Android /type:device /id:{ID VAN IMAGE} detail
 ```
-### Appium zecht dat er geen device aangesloten is.
+### Appium zegt dat er geen device aangesloten is.
 
 de oplossing in [deze](https://github.com/email2vimalraj/appium-stf-example/issues/1) posts werkte voor mij. Hierbij heb je het ID nummer van de gewenste image nodig.
 
