@@ -17,7 +17,7 @@ comando voor verkrijgen lijst images
 commando details image
 
 ```
-> emulatorcmd.exe /sku:Android /type:device /id:{ID VAN IMAGE} detail
+> emulatorcmd.exe /sku:Android /type:device /id:97522427-7A5E-4F3B-96A8-B9F9F0C0423A detail
 ```
 
 
