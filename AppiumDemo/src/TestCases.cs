@@ -1,3 +1,5 @@
+using AppiumDemo.src.PageObject.System;
+using AppiumDemo.src.Utillity;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
@@ -11,44 +13,42 @@ namespace AppiumDemo
     [TestFixture]
     public class TestCases
     {
-        AndroidDriver<AndroidElement> driver;
-        DesiredCapabilities cap;
-
-        [SetUp]
-        public void init()
-        {
-            cap = new DesiredCapabilities();
-            cap.SetCapability("platformName","Android");
-            cap.SetCapability("udid", "169.254.138.177:5555");
-            cap.SetCapability("deviceName", $"7'' KitKat (4.4) XHDPI Tablet");
-            cap.SetCapability("app", "C:\\Users\\Genuit MHG\\Downloads\\Task.apk");
-            cap.SetCapability("fullReset", "false");
-            cap.SetCapability("appWaitActivity", "org.dmfs.tasks.TaskListActivity");
-            cap.SetCapability("automationName", "appium");
-
-            driver = new AndroidDriver<AndroidElement>(new Uri("http://127.0.0.1:4723/wd/hub"),cap);
-
-        }
         [TearDown]
-            public void close()
+        public void close()
         {
-            driver.Quit();
+            Driver.Instance.Dispose();
 
         }
 
         [Test]
-        public void Test1()
+        public void First_real_test()
         {
-            AndroidElement elemet = driver.FindElement(By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar.Tab[2]/android.widget.ImageView"));
-            AndroidElement elemet2 = driver.FindElement(By.XPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.widget.LinearLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar.Tab[5]/android.widget.ImageView"));
+            var App = new AppUnderTest()
+                .NavigateToCalendar()
+                .ClickAround();
+        }
 
-            for (int i = 0; i < 5; i++)
-            {
-                elemet.Click();
-                Thread.Sleep(200);
-                elemet2.Click();
-                Thread.Sleep(200);
-            }
+        [Test]
+        public void ShouldSetTitle()
+        {
+            var app = new AppUnderTest()
+                .NavigateToCalendar()
+                .OpenAddScreen()
+                .MakeItem("TestTitel123");
+
+            Assert.That(app.Title.Equals("TestTitel123"));
+
+        }
+        [Test]
+        public void LatestTaskShouldBeOnTop()
+        {
+            var app = new AppUnderTest().NavigateToTasksPage()
+                .OpenAddTasks()
+                .AddTask("Taks1")
+                .AddTask("Taks2")
+                .GotToFitrstTask();
+
+            Assert.That(app.Title.Equals("Taks2"));
 
         }
 

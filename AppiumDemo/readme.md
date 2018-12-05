@@ -67,7 +67,6 @@ LETOP! Dit moet in de systeem variabelen niet in de user variabelen.
 
 als al deze problemen zijn opgelost kun je het project laden in visual studio.
 
-
 ## Andere problemen
 
 ### waar kan ik de naam van een Image vinden?
@@ -89,12 +88,36 @@ Om meer informatie over een specifiek image te krijgen:
 ```cmd
 > emulatorcmd.exe /sku:Android /type:device /id:{ID VAN IMAGE} detail
 ```
+
 ### Appium zecht dat er geen device aangesloten is.
 
-de oplossing in [deze](https://github.com/email2vimalraj/appium-stf-example/issues/1) posts werkte voor mij. Hierbij heb je het ID nummer van de gewenste image nodig.
+Mogelijk is je device niet verbonden met de de Android Debugging Bridge.
 
+Ga in de commandline naar ``(pad waar  andriodSDK geinstaleerd staat)/Android/platform-tools``
+
+Hier zou je toegang moeten hebben tot het ``adb`` command.
+
+> dit kun je testen met:
+> ``` cmd
+> > adb help
+> ```
+
+Om verbinding met de emulator te maken gebruik je:
+
+``` cmd
+> adb connect (IP device)
+```
+
+Je kunt het Ip van je emulator in visual studio deveice emulator vinden door op de tools knop te drukken in de toolbar.
+
+![Toolbar Plaatje](Assets/Toolbar.png)
+
+Je vindt het juiste addres onder Network -> Emulator Adapter #1 -> Network addresses.
+Het gaat over het addres dit format: ``111.222.333.444``
 
 ## Disired capabilities
 
 Appium werkt met desired capabilities.
 Een overzicht van alle mogelijkheden is [hier](http://appium.io/docs/en/writing-running-appium/caps/) te vinden.
+
+Voor dat je ze in de
