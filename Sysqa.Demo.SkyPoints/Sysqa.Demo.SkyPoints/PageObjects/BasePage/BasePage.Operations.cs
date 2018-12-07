@@ -1,20 +1,25 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Support.UI;
 using Sysqa.Demo.SkyPoints.Utilities;
 using System;
+using System.Collections.ObjectModel;
 
 namespace Sysqa.Demo.SkyPoints.PageObjects
 {
     public partial class BasePage
     {
         [TearDown]
-        public void EndTestCase()
+        protected void EndTestCase()
         {
             Driver.CleanUp();
         }
 
-
+        protected ReadOnlyCollection<AndroidElement> TryFindAll(By selector)
+        {
+            return Wait.Until(_ => Driver.Instance.FindElements(selector));
+        }
         public IWebElement TryFind(By selector)
         {
             return TryFind(selector, Wait);
@@ -24,7 +29,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
             return wait.Until(_ => Driver.Instance.FindElement(selector));
         }
 
-        public bool ElementExists(By by)
+        protected bool ElementExists(By by)
         {
             try
             {

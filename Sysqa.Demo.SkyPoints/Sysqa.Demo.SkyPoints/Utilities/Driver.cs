@@ -7,10 +7,10 @@ namespace Sysqa.Demo.SkyPoints.Utilities
 {
     public static class Driver
     {
-        private static IWebDriver _driverInstance;
+        private static AndroidDriver<AndroidElement> _driverInstance;
         private static DesiredCapabilities cap;
 
-        public static IWebDriver Instance
+        public static AndroidDriver<AndroidElement> Instance
         {
             get
             {
@@ -19,7 +19,7 @@ namespace Sysqa.Demo.SkyPoints.Utilities
 
                     cap = new DesiredCapabilities();
                     cap.SetCapability("platformName", "Android");
-                    cap.SetCapability("udid", "dd87c16a");
+                    cap.SetCapability("udid", Settings.TestSettingsInstance.udid);
                     cap.SetCapability("deviceName", $"SysqaDemo");
                     cap.SetCapability("app", Settings.TestSettingsInstance.ApkLocation);
                     cap.SetCapability("fullReset", "false");

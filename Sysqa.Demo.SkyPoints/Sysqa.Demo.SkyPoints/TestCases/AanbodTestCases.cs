@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using Sysqa.Demo.SkyPoints.PageObjects;
+using System.Net.Http;
 
 namespace Sysqa.Demo.SkyPoints.TestCases
 {
@@ -9,8 +11,31 @@ namespace Sysqa.Demo.SkyPoints.TestCases
         [Test]
         public void My_Offers_Should_Only_Be_Accesable_After_Login()
         {
-            var page = new HomePage().
+            //ACT
+            var page = new HomePage()
+                .NavigateToAanbod()
+                .SwipeToBottom()
+                .PresMyOffers();
 
+            //Assert
+            page.PageTitle.Should().Be("Inloggen");
         }
+
+        [Test]
+        public void My_Offers_Should_Be_Abundant()
+        {
+            //ACT
+            var page = new HomePage()
+                .NavigateToAanbod()
+                .SwipeToBottom()
+                .PresMyOffers()
+                .LoginFromMyOffers();
+
+            //Assert
+            page.hasOffers.Should().BeTrue();
+        }
+        HttpClient x = new HttpClient();
+       
+        
     }
 }

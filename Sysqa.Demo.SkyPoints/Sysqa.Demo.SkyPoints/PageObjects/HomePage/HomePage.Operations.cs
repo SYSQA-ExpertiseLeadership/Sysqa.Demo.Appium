@@ -23,6 +23,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
         public AanbodPage NavigateToAanbod()
         {
             SkipQuestion();
+            AanbodButton.Click();
             var newPage = new AanbodPage();
             Wait.Until(_ => newPage.IsLoaded);
             return newPage;

@@ -19,5 +19,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
                 return _wait;
             }
         }
+
+        public string PageTitle { get { return pageTitle.Text;} }
     }
 }
