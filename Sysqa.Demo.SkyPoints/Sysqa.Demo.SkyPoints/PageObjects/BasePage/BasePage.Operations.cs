@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Support.UI;
 using Sysqa.Demo.SkyPoints.Utilities;
@@ -10,12 +9,6 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
 {
     public partial class BasePage
     {
-        [TearDown]
-        protected void EndTestCase()
-        {
-            Driver.CleanUp();
-        }
-
         protected ReadOnlyCollection<AndroidElement> TryFindAll(By selector)
         {
             return Wait.Until(_ => Driver.Instance.FindElements(selector));

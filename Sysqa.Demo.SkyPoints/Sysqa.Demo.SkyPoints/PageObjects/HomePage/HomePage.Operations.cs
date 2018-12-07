@@ -3,7 +3,7 @@ using Sysqa.Demo.SkyPoints.Utilities;
 
 namespace Sysqa.Demo.SkyPoints.PageObjects
 {
-    public partial class HomePage
+    public partial class HomePage :BasePage
     {
         public MeerPage NavigateToMeer()
         {
