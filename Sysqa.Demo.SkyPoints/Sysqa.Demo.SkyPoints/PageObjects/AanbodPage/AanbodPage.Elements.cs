@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium.Android;
-using Sysqa.Demo.SkyPoints.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 

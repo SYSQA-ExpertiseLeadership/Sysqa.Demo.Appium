@@ -1,8 +1,12 @@
 {
   "TestSettings": {
-    "ApkLocation": ""
+    "LogFolder": "",
+    "ApkLocation": "",
+    "udid": ""
   },
   "User": {
-    "CardNumber": ""
+    "CardNumber": "",
+    "UserName": "",
+    "PassWord": ""
   }
 }

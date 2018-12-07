@@ -6,13 +6,13 @@ using Sysqa.Demo.SkyPoints.Utilities;
 namespace Sysqa.Demo.SkyPoints.TestCases
 {
     [TestFixture]
-    public class kaartTestCases
+    public class kaartTestCases : BaseTest
     {
         [Test]
         public void SaldoKaartControleren()
         {
             //ARRANGE
-            
+
             //ACT
             var userCar = new HomePage()
                 .NavigateToKaart()
@@ -42,6 +42,6 @@ namespace Sysqa.Demo.SkyPoints.TestCases
             x.IsLoaded.Should().BeTrue();
 
         }
-        
+
     }
 }

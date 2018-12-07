@@ -1,12 +1,13 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using Sysqa.Demo.SkyPoints.PageObjects;
+using Sysqa.Demo.SkyPoints.Utilities;
 using System.Net.Http;
 
 namespace Sysqa.Demo.SkyPoints.TestCases
 {
     [TestFixture]
-    public class AanbodTestCases
+    public class AanbodTestCases : BaseTest
     {
         [Test]
         public void My_Offers_Should_Only_Be_Accesable_After_Login()
@@ -34,8 +35,5 @@ namespace Sysqa.Demo.SkyPoints.TestCases
             //Assert
             page.hasOffers.Should().BeTrue();
         }
-        HttpClient x = new HttpClient();
-       
-        
     }
 }
