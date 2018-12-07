@@ -120,6 +120,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjects\AanbodPage\AanbodPage.Elements.cs" />
+    <Compile Include="PageObjects\AanbodPage\AanbodPage.Properties.cs" />
+    <Compile Include="PageObjects\AanbodPage\AanbodPage.Operations.cs" />
     <Compile Include="PageObjects\BasePage\BasePage.Properties.cs" />
     <Compile Include="PageObjects\BasePage\BasePage.Operations.cs" />
     <Compile Include="PageObjects\BasePage\BasePage.Elements.cs" />
@@ -132,10 +135,14 @@
     <Compile Include="PageObjects\MeerPage\MeerPage.Elements.cs" />
     <Compile Include="PageObjects\MeerPage\MeerPage.Properties.cs" />
     <Compile Include="PageObjects\MeerPage\MeerPage.Operations.cs" />
+    <Compile Include="PageObjects\PopUp\PopUp.Elements.cs" />
+    <Compile Include="PageObjects\PopUp\PopUp.Properties.cs" />
+    <Compile Include="PageObjects\PopUp\PopUp.Operations.cs" />
     <Compile Include="PageObjects\SaldoPage\SaldoPage.Properties.cs" />
     <Compile Include="PageObjects\SaldoPage\SaldoPage.Operations.cs" />
     <Compile Include="PageObjects\SaldoPage\SaldoPage.Elements.cs" />
-    <Compile Include="TestCases\TestCases.cs" />
+    <Compile Include="TestCases\AanbodTestCases.cs" />
+    <Compile Include="TestCases\kaartTestCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ConfigurationFactory.cs" />
     <Compile Include="Utilities\Driver.cs" />

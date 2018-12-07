@@ -30,5 +30,11 @@ namespace Sysqa.Demo.SkyPoints.Utilities
                 return _driverInstance;
             }
         }
+
+        public static void CleanUp()
+        {
+            _driverInstance.Dispose();
+            cap = null;
+        }
     }
 }
