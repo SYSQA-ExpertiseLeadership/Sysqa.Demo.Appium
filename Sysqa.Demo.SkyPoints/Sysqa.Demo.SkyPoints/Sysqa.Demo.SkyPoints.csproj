@@ -153,6 +153,7 @@
     <Compile Include="TestCases\AanbodTestCases.cs" />
     <Compile Include="TestCases\kaartTestCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\Paypal.cs" />
     <Compile Include="Utilities\BaseTest.cs" />
     <Compile Include="Utilities\ConfigurationFactory.cs" />
     <Compile Include="Utilities\Driver.cs" />
