@@ -8,18 +8,16 @@ namespace Sysqa.Demo.SkyPoints.Utilities
 {
     public class BaseTest
     {
-        [OneTimeSetUp]
-
-        public void SettupLogger() { }
-
         [OneTimeTearDown]
         public async Task endLogger()
         {
+            var filePath = $"{Settings.TestSettingsInstance.LogFolder}\\logs\\TestRun@{DateTime.Now.Hour}-{DateTime.Now.Minute}-{DateTime.Now.Second}.txt";
+
             Directory.CreateDirectory($"{Settings.TestSettingsInstance.LogFolder}\\logs");
-            var fileCreate = File.Create($"{Settings.TestSettingsInstance.LogFolder}\\logs\\TestRun@{DateTime.Now.Hour}-{DateTime.Now.Minute}-{DateTime.Now.Second}.txt");
+            var fileCreate = File.Create(filePath);
             fileCreate.Dispose();
 
-            StreamWriter file = new StreamWriter(@"C:\TestTestFolder\WriteLines2.txt");
+            StreamWriter file = new StreamWriter(filePath);
             foreach (var logLine in TestLogger.Log)
             {
                 await file.WriteLineAsync("asd");
