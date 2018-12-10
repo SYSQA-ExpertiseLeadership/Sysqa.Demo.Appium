@@ -9,6 +9,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
         {
             SkipQuestion();
             meerPageButton.Click();
+            TestLogger.AddToLog("Ga naar de 'MEER' pagina");
             var newPage = new MeerPage();
             Wait.Until(_ => newPage.IsLoaded);
             return newPage;
@@ -17,6 +18,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
         {
             SkipQuestion();
             var newPage = new KaartPage();
+            TestLogger.AddToLog("Navigeer naar de 'Kaart' Pagina");
             Wait.Until(_ => newPage.IsLoaded);
             return newPage;
         }
@@ -24,6 +26,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
         {
             SkipQuestion();
             AanbodButton.Click();
+            TestLogger.AddToLog("Navigeer naar de 'Aanbod' Pagina");
             var newPage = new AanbodPage();
             Wait.Until(_ => newPage.IsLoaded);
             return newPage;
@@ -34,6 +37,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
             if (ElementExists(By.Id("nl.airmiles.app:id/has_card")))
             {
                 Driver.Instance.Navigate().Back();
+                TestLogger.AddToLog("Sla de registreer pagina over");
                 Wait.Until(_ => !ElementExists(By.Id("nl.airmiles.app:id/has_card")));
 
             }

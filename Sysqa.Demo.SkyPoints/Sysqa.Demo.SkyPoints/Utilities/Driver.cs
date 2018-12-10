@@ -34,6 +34,7 @@ namespace Sysqa.Demo.SkyPoints.Utilities
         public static void CleanUp()
         {
             _driverInstance.Dispose();
+            _driverInstance = null;
             cap = null;
         }
     }

@@ -19,7 +19,7 @@ namespace Sysqa.Demo.SkyPoints.TestCases
                 .CheckSaldo(Settings.UserInstance.CardNumber);
 
             //ASSERT
-            userCar.balance.Should().Be("622");
+            userCar.balance.Should().Be("628");
         }
         [TestCase]
         public void DeleteMoetPopupTonen()
