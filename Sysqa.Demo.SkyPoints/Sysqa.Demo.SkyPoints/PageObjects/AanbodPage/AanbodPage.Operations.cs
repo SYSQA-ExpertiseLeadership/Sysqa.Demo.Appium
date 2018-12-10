@@ -4,30 +4,31 @@ using System.Linq;
 
 namespace Sysqa.Demo.SkyPoints.PageObjects
 {
-    public partial class AanbodPage: BasePage
+    public partial class AanbodPage : BasePage
     {
         public AanbodPage SwipeToTop()
         {
-           // if (leftTitles.Where(x => x.Text == "Speciaal voor jou!").Count() == 0)
+            // if (leftTitles.Where(x => x.Text == "Speciaal voor jou!").Count() == 0)
             //{
-                Driver.Instance.Swipe(390, 100, 390, 820, 100);
-            Console.WriteLine("SWIPE Omlaag");
+            Driver.Instance.Swipe(390, 100, 390, 820, 100);
+            TestLogger.AddToLog("Swipe Omlaag");
             // }
             return this;
         }
         public AanbodPage SwipeToBottom()
         {
-           // if (leftTitles.Where(x => x.Text == "uitgelicht").Count() == 0)
+            // if (leftTitles.Where(x => x.Text == "uitgelicht").Count() == 0)
             //{
-                Driver.Instance.Swipe(390, 820, 390, 100, 100);
-            Console.WriteLine("SWIPE Omhoog");
-           // }
+            Driver.Instance.Swipe(390, 820, 390, 100, 100);
+            TestLogger.AddToLog("SWIPE Omhoog");
+            // }
             return this;
         }
 
         public LoginPage PresMyOffers()
         {
             leftTitles.Where(x => x.Text == "Speciaal voor jou!").First().Click();
+            TestLogger.AddToLog("klik op Speciaal voor jou!");
             var newPage = new LoginPage();
             Wait.Until(_ => newPage.IsLoaded);
 

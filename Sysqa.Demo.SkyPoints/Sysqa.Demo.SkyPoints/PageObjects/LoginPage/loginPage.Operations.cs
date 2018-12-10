@@ -14,8 +14,10 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
         public MyOffersPage LoginFromMyOffers()
         {
             userNameField.SendKeys(Settings.UserInstance.UserName);
+            TestLogger.AddToLog("Vul gebruikers naam in");
             Driver.Instance.Navigate().Back();
             passwordField.SendKeys(Settings.UserInstance.PassWord);
+            TestLogger.AddToLog("Vul wachtwoord");
             Driver.Instance.Navigate().Back();
             logInButton.Click();
 
