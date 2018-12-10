@@ -19,7 +19,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
-    <IsCodedUITest>False</IsCodedUITest>
+    <IsTestProject>true</IsTestProject>
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -151,6 +151,11 @@
     <Compile Include="PageObjects\SaldoPage\SaldoPage.Properties.cs" />
     <Compile Include="PageObjects\SaldoPage\SaldoPage.Operations.cs" />
     <Compile Include="PageObjects\SaldoPage\SaldoPage.Elements.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="TestCases\AanbodTestCases.cs" />
     <Compile Include="TestCases\kaartTestCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +170,10 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\AirMiles.apk" />
     <None Include="Resources\settings.json" />
     <None Include="settings.json" />
