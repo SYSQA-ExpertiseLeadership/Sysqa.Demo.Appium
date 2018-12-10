@@ -11,16 +11,16 @@ namespace Sysqa.Demo.SkyPoints.Utilities
         [OneTimeTearDown]
         public async Task endLogger()
         {
-            var filePath = $"{Settings.TestSettingsInstance.LogFolder}\\logs\\TestRun@{DateTime.Now.Hour}-{DateTime.Now.Minute}-{DateTime.Now.Second}.txt";
+            var filePath = $"{Settings.TestSettingsInstance.LogFolder}logs\\TestRun@{DateTime.Now.Hour}-{DateTime.Now.Minute}-{DateTime.Now.Second}.txt";
 
-            Directory.CreateDirectory($"{Settings.TestSettingsInstance.LogFolder}\\logs");
+            Directory.CreateDirectory($"{Settings.TestSettingsInstance.LogFolder}logs");
             var fileCreate = File.Create(filePath);
             fileCreate.Dispose();
 
             StreamWriter file = new StreamWriter(filePath);
             foreach (var logLine in TestLogger.Log)
             {
-                await file.WriteLineAsync("asd");
+                await file.WriteLineAsync(logLine);
             }
 
             file.Close();

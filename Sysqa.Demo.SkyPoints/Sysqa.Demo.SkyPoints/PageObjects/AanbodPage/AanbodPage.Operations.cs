@@ -10,7 +10,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
         {
             // if (leftTitles.Where(x => x.Text == "Speciaal voor jou!").Count() == 0)
             //{
-            Driver.Instance.Swipe(390, 100, 390, 820, 100);
+            Driver.Instance.Swipe(390, 100, 390, 820, 250);
             TestLogger.AddToLog("Swipe Omlaag");
             // }
             return this;
@@ -19,7 +19,7 @@ namespace Sysqa.Demo.SkyPoints.PageObjects
         {
             // if (leftTitles.Where(x => x.Text == "uitgelicht").Count() == 0)
             //{
-            Driver.Instance.Swipe(390, 820, 390, 100, 100);
+            Driver.Instance.Swipe(390, 820, 390, 100, 250);
             TestLogger.AddToLog("SWIPE Omhoog");
             // }
             return this;
