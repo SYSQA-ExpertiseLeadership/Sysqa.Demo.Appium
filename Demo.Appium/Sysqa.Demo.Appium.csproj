@@ -66,14 +66,31 @@
     <Reference Include="WebDriver, Version=3.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Selenium.WebDriver.3.10.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Selenium.Support.3.0.1\lib\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=3.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.Support.3.10.0\lib\net45\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Class1.cs" />
+    <Compile Include="src\PageObject\AddScreen-folder\AddScreen.Elements.cs" />
+    <Compile Include="src\PageObject\AddScreen-folder\AddScreen.Properties.cs" />
+    <Compile Include="src\PageObject\AddScreen-folder\AddScreen.Operations.cs" />
+    <Compile Include="src\PageObject\BasePage.cs" />
+    <Compile Include="src\PageObject\Confirm\ConfirmScreen.Properties.cs" />
+    <Compile Include="src\PageObject\Confirm\ConfirmScreen.Elements.cs" />
+    <Compile Include="src\PageObject\Confirm\ConfirmScreen.Operations.cs" />
+    <Compile Include="src\PageObject\FirstPage.Operations.cs" />
+    <Compile Include="src\PageObject\FirstPage.Elements.cs" />
+    <Compile Include="src\PageObject\FirstPage.Properties.cs" />
+    <Compile Include="src\PageObject\IWebelement.cs" />
+    <Compile Include="src\PageObject\System\System.Elements.cs" />
+    <Compile Include="src\PageObject\System\System.Operations.cs" />
+    <Compile Include="src\PageObject\Tasks\TasksPage.Elements.cs" />
+    <Compile Include="src\PageObject\Tasks\TasksPage.Properties.cs" />
+    <Compile Include="src\PageObject\Tasks\TasksPage.Operations.cs" />
     <Compile Include="src\TestCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Utillity\Driver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
