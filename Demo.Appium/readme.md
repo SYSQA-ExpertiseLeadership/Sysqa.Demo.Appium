@@ -88,7 +88,6 @@ Om meer informatie over een specifiek image te krijgen:
 ```cmd
 > emulatorcmd.exe /sku:Android /type:device /id:{ID VAN IMAGE} detail
 ```
-
 ### Appium zecht dat er geen device aangesloten is.
 
 Mogelijk is je device niet verbonden met de de Android Debugging Bridge.
